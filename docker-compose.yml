@@ -21,7 +21,8 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: .
+      dockerfile: frontend/Dockerfile
       args:
         VITE_ENV_FILE: .env.development
     restart: unless-stopped
