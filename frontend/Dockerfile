@@ -1,6 +1,8 @@
 FROM node:20-alpine
+ARG VITE_ENV_FILE=.env.production
 WORKDIR /app
 COPY package.json package-lock.json* ./
+COPY ${VITE_ENV_FILE} .env
 RUN npm install
 COPY . .
 EXPOSE 5173
